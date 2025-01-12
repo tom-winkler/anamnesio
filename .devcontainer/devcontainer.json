@@ -1,6 +1,6 @@
 {
     "name": "Anamnesio Development Container",
-    "dockerFile": "Dockerfile",
+    "dockerFile": "../Dockerfile",
     "extensions": [
       "dbaeumer.vscode-eslint",
       "esbenp.prettier-vscode"
