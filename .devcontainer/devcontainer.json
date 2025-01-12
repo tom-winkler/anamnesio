@@ -1,0 +1,13 @@
+{
+    "name": "Anamnesio Development Container",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"
+    ],
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "npm install --prefix frontend && npm install --prefix backend",
+    "remoteUser": "node"
+  }
