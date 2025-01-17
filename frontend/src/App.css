@@ -1,0 +1,68 @@
+.anamnesis-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.anamnesis-form section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: rgba(185,215,156,.25);
+  border-radius: 8px;
+}
+
+.anamnesis-form h1 {
+  color: #7C1715;
+  margin-bottom: 2rem;
+}
+
+.anamnesis-form h2 {
+  color: #659F48;
+  margin-bottom: 1.5rem;
+}
+
+.anamnesis-form div {
+  margin-bottom: 1rem;
+}
+
+.anamnesis-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #3c4043;
+}
+
+.anamnesis-form select,
+.anamnesis-form input[type="text"],
+.anamnesis-form input[type="date"],
+.anamnesis-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #B9D79C;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+.anamnesis-form select:focus,
+.anamnesis-form input:focus,
+.anamnesis-form textarea:focus {
+  border-color: #659F48;
+  outline: none;
+}
+
+.anamnesis-form button {
+  background-color: #659F48;
+  border: 3px solid #659F48;
+  color: white;
+  padding: 10px 24px;
+  font-size: 1.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.anamnesis-form button:hover {
+  background-color: rgba(185,215,156,.5);
+  border-color: #659F48;
+  color: #659F48;
+}

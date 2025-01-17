@@ -1,0 +1,18 @@
+{
+  "allergies": "Haben Sie Allergien (z.B. Latex, Penicillin)?",
+  "epilepsy": "Haben Sie Epilepsie?",
+  "heart_diseases": "Haben Sie Herz- oder Kreislauferkrankungen (z.B. Bluthochdruck)?",
+  "heart_pass": "Haben Sie einen Herzpass?",
+  "diabetes": "Haben Sie Diabetes?",
+  "respiratory_disease": "Haben Sie eine Atemwegserkrankung (z.B. Asthma, COPD)?",
+  "thrombosis": "Haben Sie eine Thromboseerkrankung?",
+  "cancer": "Hatten oder haben Sie Krebs?",
+  "bleeding_tendency": "Haben Sie eine erhöhte Blutungsneigung?",
+  "infectious_diseases": "Hatten oder haben Sie Infektionskrankheiten (z.B. HIV)?",
+  "liver_disease": "Haben Sie eine Lebererkrankung?",
+  "artificial_joints": "Haben Sie künstliche Gelenke (z.B. Knie, Hüften)?",
+  "medications": "Nehmen Sie regelmäßig Medikamente ein?",
+  "other_diseases": "Haben Sie andere Krankheiten? (z.B. MRSA, Creutzfeldt-Jakob)",
+  "pregnancy": "Für weibliche Patienten: Sind Sie schwanger?",
+  "recall": "Möchten Sie eine Erinnerung für eine Kontrolluntersuchung oder Zahnreinigung (alle 6 Monate)?"
+}
