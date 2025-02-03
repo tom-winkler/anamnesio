@@ -8,7 +8,6 @@ function AnamnesisForm() {
     lastName: '',
     birthDate: '',
     address: '',
-    addressLine2: '',
     phone: '',
     email: '',
     
@@ -81,6 +80,20 @@ function AnamnesisForm() {
     });
   };
 
+  // Single function to handle nested checkbox/text changes
+  const handleNestedInputChange = (event) => {
+    const { name, type, checked, value } = event.target;
+    // Split name="heartConditions.highBloodPressure" into [ 'heartConditions', 'highBloodPressure' ]
+    const [parentKey, childKey] = name.split('.');
+    setFormData((prev) => ({
+      ...prev,
+      [parentKey]: {
+        ...prev[parentKey],
+        [childKey]: type === 'checkbox' ? checked : value,
+      },
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
@@ -104,10 +117,7 @@ function AnamnesisForm() {
           <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} required />
           
           <label>Adresse:</label>
-          <textarea name="address" value={formData.address} onChange={handleChange} required />
-          
-          <label>Adresse Zeile 2:</label>
-          <textarea name="addressLine2" value={formData.addressLine2} onChange={handleChange} />
+          <input type="text" name="address" value={formData.address} autoComplete="street-address" onChange={handleChange} required />
           
           <label>Telefon:</label>
           <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
@@ -121,10 +131,10 @@ function AnamnesisForm() {
         <h3>Arzt Informationen</h3>
         <div className="form-group">
           <label>Hausarzt:</label>
-          <input type="text" name="familyDoctor" value={formData.familyDoctor} onChange={handleChange} />
+          <input type="text" name="familyDoctor" value={formData.familyDoctor} autoComplete="off" onChange={handleChange} />
           
           <label>Adresse des Hausarztes:</label>
-          <textarea name="familyDoctorAddress" value={formData.familyDoctorAddress} onChange={handleChange} />
+          <textarea name="familyDoctorAddress" value={formData.familyDoctorAddress} autoComplete="off" onChange={handleChange} />
         </div>
       </section>
 
@@ -162,44 +172,85 @@ function AnamnesisForm() {
           </select>
           
           {formData.hasHeartConditions === 'yes' && (
-            <div>
-              <label>
-                <input type="checkbox" name="heartConditions.highBloodPressure" checked={formData.heartConditions.highBloodPressure} onChange={handleChange} />
+            <div className="heart-conditions">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.highBloodPressure"
+                  checked={formData.heartConditions.highBloodPressure}
+                  onChange={handleNestedInputChange}
+                />
                 Bluthochdruck
               </label>
-              
-              <label>
-                <input type="checkbox" name="heartConditions.lowBloodPressure" checked={formData.heartConditions.lowBloodPressure} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.lowBloodPressure"
+                  checked={formData.heartConditions.lowBloodPressure}
+                  onChange={handleNestedInputChange}
+                />
                 Niedriger Blutdruck
               </label>
-              
-              <label>
-                <input type="checkbox" name="heartConditions.heartAttack" checked={formData.heartConditions.heartAttack} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.heartAttack"
+                  checked={formData.heartConditions.heartAttack}
+                  onChange={handleNestedInputChange}
+                />
                 Herzinfarkt
               </label>
-              
-              <label>
-                <input type="checkbox" name="heartConditions.pacemaker" checked={formData.heartConditions.pacemaker} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.pacemaker"
+                  checked={formData.heartConditions.pacemaker}
+                  onChange={handleNestedInputChange}
+                />
                 Herzschrittmacher
               </label>
-              
-              <label>
-                <input type="checkbox" name="heartConditions.valveDefect" checked={formData.heartConditions.valveDefect} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.valveDefect"
+                  checked={formData.heartConditions.valveDefect}
+                  onChange={handleNestedInputChange}
+                />
                 Herzklappenfehler
               </label>
-              
-              <label>
-                <input type="checkbox" name="heartConditions.myocarditis" checked={formData.heartConditions.myocarditis} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.myocarditis"
+                  checked={formData.heartConditions.myocarditis}
+                  onChange={handleNestedInputChange}
+                />
                 Herzmuskelentzündung
               </label>
-              
-              <label>
-                <input type="checkbox" name="heartConditions.artificialValve" checked={formData.heartConditions.artificialValve} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="heartConditions.artificialValve"
+                  checked={formData.heartConditions.artificialValve}
+                  onChange={handleNestedInputChange}
+                />
                 Künstliche Herzklappe
               </label>
-              
-              <label>Andere:</label>
-              <textarea name="heartConditions.other" value={formData.heartConditions.other} onChange={handleChange} />
+
+              <label className="checkbox-label">
+                Andere:
+                <textarea
+                  name="heartConditions.other"
+                  value={formData.heartConditions.other}
+                  onChange={handleNestedInputChange}
+                />
+              </label>
             </div>
           )}
           
